@@ -1,0 +1,27 @@
+﻿@model IEnumerable<blackBox.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer List</h2>
+@if (!Model.Any())
+{
+    <p>There is currently no customer base, we need Brand awareness!</p>
+}
+
+else
+{
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th colspan="2">Customer</th>
+        </tr>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(customer.Name,"Direct","Customer", new { id = customer.Id }, null)</td>
+            </tr>
+        }
+    </table>
+}
