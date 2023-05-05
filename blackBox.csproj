@@ -176,10 +176,56 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305040430444_InitialModel.cs" />
+    <Compile Include="Migrations\202305040430444_InitialModel.designer.cs">
+      <DependentUpon>202305040430444_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305040946019_AddIsSubscribedToNewsletter.cs" />
+    <Compile Include="Migrations\202305040946019_AddIsSubscribedToNewsletter.designer.cs">
+      <DependentUpon>202305040946019_AddIsSubscribedToNewsletter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305040951537_AddMembershipType.cs" />
+    <Compile Include="Migrations\202305040951537_AddMembershipType.designer.cs">
+      <DependentUpon>202305040951537_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305040954306_AddIsSubscribedToNewsletter1.cs" />
+    <Compile Include="Migrations\202305040954306_AddIsSubscribedToNewsletter1.designer.cs">
+      <DependentUpon>202305040954306_AddIsSubscribedToNewsletter1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305041058588_ApplyAnnotationToCustomerProperties.cs" />
+    <Compile Include="Migrations\202305041058588_ApplyAnnotationToCustomerProperties.designer.cs">
+      <DependentUpon>202305041058588_ApplyAnnotationToCustomerProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305041100598_AppliedStringLengthToCustomerName.cs" />
+    <Compile Include="Migrations\202305041100598_AppliedStringLengthToCustomerName.designer.cs">
+      <DependentUpon>202305041100598_AppliedStringLengthToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305041226175_CustomerReferenceMembershipTypeRemoved.cs" />
+    <Compile Include="Migrations\202305041226175_CustomerReferenceMembershipTypeRemoved.designer.cs">
+      <DependentUpon>202305041226175_CustomerReferenceMembershipTypeRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305041300410_AppliedOneToMany.cs" />
+    <Compile Include="Migrations\202305041300410_AppliedOneToMany.designer.cs">
+      <DependentUpon>202305041300410_AppliedOneToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305050020173_AddIdentityMembership.cs" />
+    <Compile Include="Migrations\202305050020173_AddIdentityMembership.designer.cs">
+      <DependentUpon>202305050020173_AddIdentityMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305050025140_PopulateMembershipTypeTable.cs" />
+    <Compile Include="Migrations\202305050025140_PopulateMembershipTypeTable.designer.cs">
+      <DependentUpon>202305050025140_PopulateMembershipTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305050055519_RemoveAllRowsCustomer.cs" />
+    <Compile Include="Migrations\202305050055519_RemoveAllRowsCustomer.designer.cs">
+      <DependentUpon>202305050055519_RemoveAllRowsCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -292,6 +338,41 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202305040430444_InitialModel.resx">
+      <DependentUpon>202305040430444_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305040946019_AddIsSubscribedToNewsletter.resx">
+      <DependentUpon>202305040946019_AddIsSubscribedToNewsletter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305040951537_AddMembershipType.resx">
+      <DependentUpon>202305040951537_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305040954306_AddIsSubscribedToNewsletter1.resx">
+      <DependentUpon>202305040954306_AddIsSubscribedToNewsletter1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305041058588_ApplyAnnotationToCustomerProperties.resx">
+      <DependentUpon>202305041058588_ApplyAnnotationToCustomerProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305041100598_AppliedStringLengthToCustomerName.resx">
+      <DependentUpon>202305041100598_AppliedStringLengthToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305041226175_CustomerReferenceMembershipTypeRemoved.resx">
+      <DependentUpon>202305041226175_CustomerReferenceMembershipTypeRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305041300410_AppliedOneToMany.resx">
+      <DependentUpon>202305041300410_AppliedOneToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305050020173_AddIdentityMembership.resx">
+      <DependentUpon>202305050020173_AddIdentityMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305050025140_PopulateMembershipTypeTable.resx">
+      <DependentUpon>202305050025140_PopulateMembershipTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305050055519_RemoveAllRowsCustomer.resx">
+      <DependentUpon>202305050055519_RemoveAllRowsCustomer.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

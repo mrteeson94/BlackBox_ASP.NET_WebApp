@@ -11,11 +11,22 @@ namespace blackBox.Controllers
 {
     public class CustomerController : Controller
     {
+        private ApplicationDbContext _context;
+        public CustomerController()
+        {
+            // Need to initialise the property to use dbContext disposable object. 
+            _context = new ApplicationDbContext();
+        }
+        //to remove the disposable dbcontext object
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         // Load customer page
         public ActionResult Customers()
         {
-            var customers = GetCusomters();
+            var customers = _context.Customers;
 
             return View(customers);
         }
@@ -23,7 +34,7 @@ namespace blackBox.Controllers
         public ActionResult Direct(int? id)
         {
             //assign var to id value
-            var customer = GetCusomters().SingleOrDefault(param => param.Id == id);
+            var customer = _context.Customers.SingleOrDefault(param => param.Id == id);
             //check if id is null
             if (customer == null)
             {
@@ -33,16 +44,15 @@ namespace blackBox.Controllers
             return View(customer);
         }
 
+        //public IEnumerable<Customer> GetCustomers()
+        //{
+        //    return new List<Customer> 
+        //    {
+        //        new Customer {Id = 1, Name = "Tyson Ng", IsSubscribedToNewsletter = true, MembershipTypeId = 1},
+        //        new Customer {Id = 2, Name = "Julie Lam", IsSubscribedToNewsletter = true, MembershipTypeId = 0}
 
-        //IEnumerable to store list of customer
-        private IEnumerable<Customer> GetCusomters()
-        {
-            return new List<Customer>
-            {
-                new Customer { Id = 1, Name = "Tyson Nguyen" },
-                new Customer { Id = 2, Name = "Julie Lam"}
-            };
-        }
+        //    };
+        //}
 
 
         //Custom url routing example
