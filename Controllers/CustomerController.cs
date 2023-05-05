@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Data.Entity;
 namespace blackBox.Controllers
 {
     public class CustomerController : Controller
@@ -26,7 +26,7 @@ namespace blackBox.Controllers
         // Load customer page
         public ActionResult Customers()
         {
-            var customers = _context.Customers;
+            var customers = _context.Customers.Include(c => c.MembershipType);
 
             return View(customers);
         }
