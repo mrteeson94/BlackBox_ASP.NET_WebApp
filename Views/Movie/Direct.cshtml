@@ -5,4 +5,10 @@
 }
 
 <h2>@Model.Name</h2>
+<ul>
+    <li>Title: @Model.Name</li>
+    <li>Release Date: @Model.ReleaseDate.ToString("dd/MM/yyyy")</li>
+    <li>Date Uploaded: @Model.DateAdded.ToString("dd/MM/yyyy")</li>
+    <li>Stock available: @Model.NoOfStock</li>
+</ul>
 
