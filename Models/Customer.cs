@@ -16,12 +16,11 @@ namespace blackBox.Models
         [Required]
         public bool IsSubscribedToNewsletter { get; set; }
 
-        //public virtual MembershipType MembershipType { get; set; }
-        //[Required]
-        //public int MembershipTypeId { get; set; } //foriegn key to MembershipType table
+        public Nullable<DateTime> BirthDate { get; set; }
 
+        //Foreign key
         public Nullable<int> MembershipTypeId { get; set; }
-
+        //Reference property
         public virtual MembershipType MembershipType { get; set; }
     }
 }

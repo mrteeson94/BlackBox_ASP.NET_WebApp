@@ -226,3 +226,9 @@ C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.Appli
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.AddIdentityMembership.resources
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.PopulateMembershipTypeTable.resources
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.RemoveAllRowsCustomer.resources
+C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.AddMembershipTypeNameProperty1.resources
+C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.UpdateMembershipTypeValues.resources
+C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.AddBirthDateCustomer.resources
+C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.PopulateGenre.resources
+C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.PopulateGenre1.resources
+C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.dateAddedColToMovies.resources

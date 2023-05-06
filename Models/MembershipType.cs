@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -14,8 +15,13 @@ namespace blackBox.Models
         }
 
         public int MembershipTypeId { get; set; }
+        [Required]
+        public string TitleMembershipType { get; set; }
+        [Required]
         public short SignUpFee { get; set; }
+        [Required]
         public byte DurationInMonths { get; set; }
+        [Required]
         public byte DiscountRate { get; set; }
 
         public virtual ICollection<Customer> Customers { get; set; }

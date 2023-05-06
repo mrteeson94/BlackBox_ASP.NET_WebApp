@@ -220,9 +220,34 @@
     <Compile Include="Migrations\202305050055519_RemoveAllRowsCustomer.designer.cs">
       <DependentUpon>202305050055519_RemoveAllRowsCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305050149127_AddMembershipTypeNameProperty1.cs" />
+    <Compile Include="Migrations\202305050149127_AddMembershipTypeNameProperty1.designer.cs">
+      <DependentUpon>202305050149127_AddMembershipTypeNameProperty1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305050151179_UpdateMembershipTypeValues.cs" />
+    <Compile Include="Migrations\202305050151179_UpdateMembershipTypeValues.designer.cs">
+      <DependentUpon>202305050151179_UpdateMembershipTypeValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305050623516_AddBirthDateCustomer.cs" />
+    <Compile Include="Migrations\202305050623516_AddBirthDateCustomer.designer.cs">
+      <DependentUpon>202305050623516_AddBirthDateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305060348586_addedGenreTable.cs" />
+    <Compile Include="Migrations\202305060348586_addedGenreTable.designer.cs">
+      <DependentUpon>202305060348586_addedGenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305060358544_PopulateGenre1.cs" />
+    <Compile Include="Migrations\202305060358544_PopulateGenre1.designer.cs">
+      <DependentUpon>202305060358544_PopulateGenre1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305060437012_dateAddedColToMovies.cs" />
+    <Compile Include="Migrations\202305060437012_dateAddedColToMovies.designer.cs">
+      <DependentUpon>202305060437012_dateAddedColToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -372,6 +397,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305050055519_RemoveAllRowsCustomer.resx">
       <DependentUpon>202305050055519_RemoveAllRowsCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305050149127_AddMembershipTypeNameProperty1.resx">
+      <DependentUpon>202305050149127_AddMembershipTypeNameProperty1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305050151179_UpdateMembershipTypeValues.resx">
+      <DependentUpon>202305050151179_UpdateMembershipTypeValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305050623516_AddBirthDateCustomer.resx">
+      <DependentUpon>202305050623516_AddBirthDateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305060348586_addedGenreTable.resx">
+      <DependentUpon>202305060348586_addedGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305060358544_PopulateGenre1.resx">
+      <DependentUpon>202305060358544_PopulateGenre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305060437012_dateAddedColToMovies.resx">
+      <DependentUpon>202305060437012_dateAddedColToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
