@@ -15,10 +15,11 @@ namespace blackBox.Models
         public string Name { get; set; }
         [Required]
         public bool IsSubscribedToNewsletter { get; set; }
-
+        [Display(Name = "Date of Birth")]
         public Nullable<DateTime> BirthDate { get; set; }
 
         //Foreign key
+        [Display(Name = "Account Membership Type")]
         public Nullable<int> MembershipTypeId { get; set; }
         //Reference property
         public virtual MembershipType MembershipType { get; set; }

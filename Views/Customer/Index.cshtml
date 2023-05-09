@@ -1,9 +1,10 @@
-﻿@model IEnumerable<blackBox.Models.Customer>
-
+﻿
 @{
-    ViewBag.Title = "Customers";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@model IEnumerable<blackBox.Models.Customer>
 
 <h2>Customer List</h2>
 @if (!Model.Any())
@@ -21,7 +22,7 @@ else
         @foreach (var customer in Model)
         {
             <tr>
-                <td>@Html.ActionLink(customer.Name ,"Direct","Customer", new { id = customer.Id }, null)</td>
+                <td>@Html.ActionLink(customer.Name, "Direct", "Customer", new { id = customer.Id }, null)</td>
                 <td>@customer.MembershipType.TitleMembershipType</td>
             </tr>
         }

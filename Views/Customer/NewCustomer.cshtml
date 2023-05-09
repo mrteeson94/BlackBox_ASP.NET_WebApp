@@ -1,0 +1,31 @@
+﻿@model blackBox.ViewModels.NewCustomerViewModel
+@{
+    ViewBag.Title = "NewCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NewCustomer</h2>
+
+@using (Html.BeginForm("NewCustomer", "Customer"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Name)
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.BirthDate)
+        @Html.TextBoxFor(m => m.Customer.BirthDate, new { @class = "form-control" })
+    </div>
+
+    <div class="checkbox">
+        @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribe for the latest newsletter!
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipType,"MembershipTypeId","TitleMembershipType"),"Subscription Type", new { @class = "btn-group" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+
+
 namespace blackBox.Controllers
 {
     public class CustomerController : Controller
@@ -23,8 +25,28 @@ namespace blackBox.Controllers
             _context.Dispose();
         }
 
+        //Form for new customer deets
+        public ActionResult NewCustomer()
+        {
+            var membershipType = _context.MembershipTypes.ToList();
+            //viewmodel object instantitiate to hold customer + membership properties
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipType = membershipType
+            };
+
+            return View(viewModel);
+        }
+        [HttpPost]
+        public ActionResult NewCustomer(Customer customer)
+        {
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return RedirectToAction("Index","Customer");
+        }
+
         // Load customer page
-        public ActionResult Customers()
+        public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.MembershipType);
 
