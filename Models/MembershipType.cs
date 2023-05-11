@@ -16,6 +16,7 @@ namespace blackBox.Models
 
         public int MembershipTypeId { get; set; }
         [Required]
+        [StringLength(255)]
         public string TitleMembershipType { get; set; }
         [Required]
         public short SignUpFee { get; set; }

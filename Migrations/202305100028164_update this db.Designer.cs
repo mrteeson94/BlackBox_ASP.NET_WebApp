@@ -7,13 +7,13 @@ namespace blackBox.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddMembershipTypeNameProperty1 : IMigrationMetadata
+    public sealed partial class updatethisdb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMembershipTypeNameProperty1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatethisdb));
         
         string IMigrationMetadata.Id
         {
-            get { return "202305050149127_AddMembershipTypeNameProperty1"; }
+            get { return "202305100028164_update this db"; }
         }
         
         string IMigrationMetadata.Source

@@ -6,7 +6,7 @@ using blackBox.Models;
 
 namespace blackBox.ViewModels
 {
-    public class NewCustomerViewModel
+    public class CustomerFormViewModel
     {
         public IEnumerable<MembershipType> MembershipType { get; set; }
         public Customer Customer { get; set; }

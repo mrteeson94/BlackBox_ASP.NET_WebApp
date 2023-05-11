@@ -25,24 +25,61 @@ namespace blackBox.Controllers
             _context.Dispose();
         }
 
+
         //Form for new customer deets
-        public ActionResult NewCustomer()
+        public ActionResult CustomerForm()
         {
             var membershipType = _context.MembershipTypes.ToList();
             //viewmodel object instantitiate to hold customer + membership properties
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipType = membershipType
             };
 
-            return View(viewModel);
+            return View("CustomerForm",viewModel);
         }
+
+
+        
+        //Upon submit of newform, redirect user to customer page which will now list the new customer
         [HttpPost]
-        public ActionResult NewCustomer(Customer customer)
+        public ActionResult SaveCustomerForm(Customer customer)
         {
-            _context.Customers.Add(customer);
+            if (customer.Id == 0)
+            {
+                _context.Customers.Add(customer);
+
+            }
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                //Refactor suggestion: Use a mapper class and call it as the main object class for customer param
+                customerInDb.Name = customer.Name;
+                customerInDb.BirthDate = customer.BirthDate;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+            }
             _context.SaveChanges();
-            return RedirectToAction("Index","Customer");
+
+            return RedirectToAction("Index", "Customer");
+        }
+
+        // EDIT EXISTING CUSTOMER FORM
+        public ActionResult EditForm(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            //Checks if customer returned exist in our database.
+            if(customer == null)
+            {
+                return HttpNotFound();
+            }
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipType = _context.MembershipTypes.ToList()
+            };
+            //returns to the customerform page but now will be filled with the customer details from the database.
+            return View("CustomerForm", viewModel);
         }
 
         // Load customer page
@@ -52,6 +89,7 @@ namespace blackBox.Controllers
 
             return View(customers);
         }
+
 
         public ActionResult Direct(int? id)
         {
@@ -65,6 +103,8 @@ namespace blackBox.Controllers
             //return view(var)
             return View(customer);
         }
+
+
 
         //public IEnumerable<Customer> GetCustomers()
         //{
