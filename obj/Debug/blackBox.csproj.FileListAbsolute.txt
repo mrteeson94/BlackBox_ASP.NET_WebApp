@@ -252,4 +252,4 @@ C:\Users\AKATY\source\repos\BlackBox\obj\Debug\blackBox.Migrations.updatethisdb.
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.updatethisdb.resources
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.CustomerMembershipRequired.resources
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.EntityValidationChangedCustomer.resources
-C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.CustomerIdKeyAnnotationRm.resources
+C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\obj\Debug\blackBox.Migrations.ChangeRequirementMovieModel.resources

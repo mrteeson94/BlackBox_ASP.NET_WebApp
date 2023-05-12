@@ -252,9 +252,9 @@
     <Compile Include="Migrations\202305120358273_EntityValidationChangedCustomer.designer.cs">
       <DependentUpon>202305120358273_EntityValidationChangedCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305120542526_CustomerIdKeyAnnotationRm.cs" />
-    <Compile Include="Migrations\202305120542526_CustomerIdKeyAnnotationRm.designer.cs">
-      <DependentUpon>202305120542526_CustomerIdKeyAnnotationRm.cs</DependentUpon>
+    <Compile Include="Migrations\202305121041065_ChangeRequirementMovieModel.cs" />
+    <Compile Include="Migrations\202305121041065_ChangeRequirementMovieModel.designer.cs">
+      <DependentUpon>202305121041065_ChangeRequirementMovieModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -439,8 +439,8 @@
     <EmbeddedResource Include="Migrations\202305120358273_EntityValidationChangedCustomer.resx">
       <DependentUpon>202305120358273_EntityValidationChangedCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305120542526_CustomerIdKeyAnnotationRm.resx">
-      <DependentUpon>202305120542526_CustomerIdKeyAnnotationRm.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305121041065_ChangeRequirementMovieModel.resx">
+      <DependentUpon>202305121041065_ChangeRequirementMovieModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

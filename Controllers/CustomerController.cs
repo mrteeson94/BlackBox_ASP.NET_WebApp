@@ -45,6 +45,7 @@ namespace blackBox.Controllers
         
         //Upon submit of newform, redirect user to customer page which will now list the new customer
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveCustomerForm(Customer customer)
         {
             if (!ModelState.IsValid)

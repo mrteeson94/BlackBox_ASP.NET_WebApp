@@ -40,5 +40,12 @@ else
     </div>
     //passes Id and textfield inputs when submit btn is triggered.
     @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Submit</button>
+}
+
+@* Client-side validation on submit *@
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

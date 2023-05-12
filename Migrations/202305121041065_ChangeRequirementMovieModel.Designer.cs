@@ -7,13 +7,13 @@ namespace blackBox.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class CustomerIdKeyAnnotationRm : IMigrationMetadata
+    public sealed partial class ChangeRequirementMovieModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CustomerIdKeyAnnotationRm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeRequirementMovieModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "202305120542526_CustomerIdKeyAnnotationRm"; }
+            get { return "202305121041065_ChangeRequirementMovieModel"; }
         }
         
         string IMigrationMetadata.Source
