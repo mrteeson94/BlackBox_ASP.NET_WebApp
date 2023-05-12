@@ -244,6 +244,18 @@
     <Compile Include="Migrations\202305100028164_update this db.designer.cs">
       <DependentUpon>202305100028164_update this db.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305120135454_CustomerMembershipRequired.cs" />
+    <Compile Include="Migrations\202305120135454_CustomerMembershipRequired.designer.cs">
+      <DependentUpon>202305120135454_CustomerMembershipRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305120358273_EntityValidationChangedCustomer.cs" />
+    <Compile Include="Migrations\202305120358273_EntityValidationChangedCustomer.designer.cs">
+      <DependentUpon>202305120358273_EntityValidationChangedCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305120542526_CustomerIdKeyAnnotationRm.cs" />
+    <Compile Include="Migrations\202305120542526_CustomerIdKeyAnnotationRm.designer.cs">
+      <DependentUpon>202305120542526_CustomerIdKeyAnnotationRm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -251,6 +263,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -419,6 +432,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305100028164_update this db.resx">
       <DependentUpon>202305100028164_update this db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305120135454_CustomerMembershipRequired.resx">
+      <DependentUpon>202305120135454_CustomerMembershipRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305120358273_EntityValidationChangedCustomer.resx">
+      <DependentUpon>202305120358273_EntityValidationChangedCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305120542526_CustomerIdKeyAnnotationRm.resx">
+      <DependentUpon>202305120542526_CustomerIdKeyAnnotationRm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

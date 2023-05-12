@@ -65,6 +65,7 @@ namespace blackBox.Controllers
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                //refactor with mapper class
                 movieInDb.Name = movie.Name;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.NoOfStock = movie.NoOfStock;
@@ -73,18 +74,6 @@ namespace blackBox.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Movie");
         }
-        //1.form page <-- pass MovieFormViewModel 
-        //1.1.View page: contain h2, form (Name, ReleaseDate, Genre) + Id, Date added + No of Stock (hidden).
-
-        //2.saveForm [httpPost] TRIGGERED BY SUBMIT BTN<-- pass movie in, 
-        //i.Add new f(x): Check if Id == null, to add NEW movie to list db.
-        //ii.Edit f(x) ELSE : Edit by assigning new var to hold movie properties via dbContext.Single()
-        ///iii. Redirect to Movie main page (action name, controller name)
-
-        //3.EditForm <-- (int id) passed from htmlActionlink(). 
-        //i. Query id to db movie.id match, if null display page error
-        //ii. create Viewmodel object that contains both movie + genre properties
-        //iii. return formpage (action name, controller name)
         public ActionResult EditForm(int id)
         {
             var selectedMovie = _context.Movies.Single(m => m.Id == id);

@@ -26,5 +26,8 @@ namespace blackBox.Models
         public byte DiscountRate { get; set; }
 
         public virtual ICollection<Customer> Customers { get; set; }
+
+        public static readonly int Unknown = 0;
+        public static readonly int PayAsYouGo = 1;
     }
 }

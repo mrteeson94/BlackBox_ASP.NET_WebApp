@@ -13,6 +13,7 @@ namespace blackBox.Controllers
 {
     public class CustomerController : Controller
     {
+        //Initialise DbContext via constructor to access SQLSeverDB
         private ApplicationDbContext _context;
         public CustomerController()
         {
@@ -33,6 +34,7 @@ namespace blackBox.Controllers
             //viewmodel object instantitiate to hold customer + membership properties
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 MembershipType = membershipType
             };
 
@@ -45,11 +47,22 @@ namespace blackBox.Controllers
         [HttpPost]
         public ActionResult SaveCustomerForm(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipType = _context.MembershipTypes.ToList()
+                };
+                return View("CustomerForm", viewModel);
+            }
+
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
-
             }
+            
             else
             {
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);

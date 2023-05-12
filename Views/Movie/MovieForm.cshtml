@@ -4,8 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Movie Form</h2>
-
+@if (Model.Movie == null)
+            {
+                <h2>Add Movie Form</h2>
+}
+else
+            {
+                <h2>Edit Movie Form</h2>
+            }
 @using (Html.BeginForm("SaveMovieForm", "Movie"))
 {
     <div class="form-group" style="margin-bottom: 1vw; margin-top: 1vw;">
