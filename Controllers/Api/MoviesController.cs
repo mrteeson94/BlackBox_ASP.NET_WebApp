@@ -69,7 +69,8 @@ namespace blackBox.Controllers.Api
             {
                 return NotFound();
             }
-
+            //If error is present: "Property ‘Id’ is part of object’s key information and cannot be modified." 
+            //uncomment line in App_start/MappingProfile.cs for inbound automapping
             Mapper.Map(movieDto, movieInDb);
             _context.SaveChanges();
             return Ok(movieDto);
