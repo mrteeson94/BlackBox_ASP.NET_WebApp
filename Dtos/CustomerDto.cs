@@ -20,8 +20,9 @@ namespace blackBox.Dtos
         public Nullable<DateTime> BirthDate { get; set; }
 
         //Foreign key
-        [Required(ErrorMessage = "Please select a subscription plan!")]
+        [Required]
         public Nullable<int> MembershipTypeId { get; set; }
 
+        public virtual MembershipTypeDto MembershipType { get; set; }
     }
 }

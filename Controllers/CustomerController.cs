@@ -99,9 +99,10 @@ namespace blackBox.Controllers
         // Load customer page
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType);
+            //Not passing domain model anymore as we are relying on API calls
+            //var customers = _context.Customers.Include(c => c.MembershipType);
 
-            return View(customers);
+            return View();
         }
 
 

@@ -190,6 +190,7 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -273,6 +274,10 @@
     <Compile Include="Migrations\202305121041065_ChangeRequirementMovieModel.cs" />
     <Compile Include="Migrations\202305121041065_ChangeRequirementMovieModel.designer.cs">
       <DependentUpon>202305121041065_ChangeRequirementMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305230224511_check.cs" />
+    <Compile Include="Migrations\202305230224511_check.designer.cs">
+      <DependentUpon>202305230224511_check.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -635,6 +640,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305121041065_ChangeRequirementMovieModel.resx">
       <DependentUpon>202305121041065_ChangeRequirementMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305230224511_check.resx">
+      <DependentUpon>202305230224511_check.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

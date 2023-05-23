@@ -7,6 +7,7 @@ using System.Web.Http;
 using blackBox.Models;
 using blackBox.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace blackBox.Controllers.Api
 {
@@ -23,7 +24,11 @@ namespace blackBox.Controllers.Api
         //1 GET List<CustomerDto> GetCustomers()  URL: ~/api/customers
         public IHttpActionResult GetCustomers()
         {
-            return Ok(_context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>));
+            var customers = _context.Customers
+                .Include(c => c.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer, CustomerDto>);
+            return Ok(customers);
         }
 
         //2 GET a customer GetACustomer() URL: ~/api/customers/1
@@ -77,6 +82,7 @@ namespace blackBox.Controllers.Api
 
         //5 DELETE RemoveCustomer(int id)URL: ~/api/customers/1
         [HttpDelete]
+        //CURRENT ISSUE: id returned from btn click on modal is returning id = null 
         public IHttpActionResult RemoveCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

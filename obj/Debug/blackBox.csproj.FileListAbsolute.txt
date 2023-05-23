@@ -261,3 +261,15 @@ C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\bin\System.Web.Http.xml
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\bin\System.Web.Http.WebHost.xml
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\bin\AutoMapper.dll
 C:\Users\AKATY\repos\BlackBox_ASP.NET_WebApp\bin\AutoMapper.xml
+C:\Users\AKATY\source\repos\BlackBox\bin\AutoMapper.dll
+C:\Users\AKATY\source\repos\BlackBox\bin\System.Net.Http.Formatting.dll
+C:\Users\AKATY\source\repos\BlackBox\bin\System.Web.Http.dll
+C:\Users\AKATY\source\repos\BlackBox\bin\System.Web.Http.WebHost.dll
+C:\Users\AKATY\source\repos\BlackBox\bin\AutoMapper.xml
+C:\Users\AKATY\source\repos\BlackBox\bin\System.Net.Http.Formatting.xml
+C:\Users\AKATY\source\repos\BlackBox\bin\System.Web.Http.xml
+C:\Users\AKATY\source\repos\BlackBox\bin\System.Web.Http.WebHost.xml
+C:\Users\AKATY\source\repos\BlackBox\obj\Debug\blackBox.Migrations.CustomerMembershipRequired.resources
+C:\Users\AKATY\source\repos\BlackBox\obj\Debug\blackBox.Migrations.EntityValidationChangedCustomer.resources
+C:\Users\AKATY\source\repos\BlackBox\obj\Debug\blackBox.Migrations.ChangeRequirementMovieModel.resources
+C:\Users\AKATY\source\repos\BlackBox\obj\Debug\blackBox.Migrations.check.resources

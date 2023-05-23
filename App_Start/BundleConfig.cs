@@ -12,8 +12,8 @@ namespace blackBox
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootbox.js",
                         "~/Scripts/bootstrap.js",
-                        "~/Scripts/datatables/jquery.datatables.js",
-                        "~/Scripts/datatables/datatables.bootstrap.js"
+                        "~/Scripts/dataTables/jquery.dataTables.js",
+                        "~/Scripts/dataTables/dataTables.bootstrap.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -26,7 +26,7 @@ namespace blackBox
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
-                      "~/content/datatables/css/datatables.bootstrap.css",
+                      "~/content/dataTables/css/dataTables.bootstrap.css",
                       "~/Content/Site.css"));
         }
     }
