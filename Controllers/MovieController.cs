@@ -26,9 +26,10 @@ namespace blackBox.Controllers
         // GET: Movie
         public ActionResult Index()
         {
-            var movie = _context.Movies.Include(c => c.Genre);
+            //passing MOVIE API for data access
+            //var movie = _context.Movies.Include(c => c.Genre);
 
-            return View(movie);
+            return View();
         }
 
 

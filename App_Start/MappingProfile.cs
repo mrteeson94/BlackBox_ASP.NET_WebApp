@@ -16,6 +16,7 @@ namespace blackBox.App_Start
             Mapper.CreateMap<Customer, CustomerDto>();
             Mapper.CreateMap<Movie, MovieDto>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+            Mapper.CreateMap<Genre, GenreDto>();
 
             //Maps API inbound calls:
             //Mapper.CreateMap<CustomerDto, Customer>();

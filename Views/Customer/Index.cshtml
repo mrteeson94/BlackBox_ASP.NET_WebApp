@@ -35,7 +35,7 @@
                         {
                             data: "name",
                             render: function (data, type, customer) {
-                                return "<a href='/customers/CustomerForm/" + customer.id + "'>" + customer.name + "</a>";
+                                return "<a href='/customers/EditForm/" + customer.id + "'>" + customer.name + "</a>";
                             }
                         },
                         {
@@ -44,7 +44,7 @@
                         {
                             data: "id",
                             render: function (data) {
-                                return "<button class='btn-link js-delete' customer-data-id=" + data + ">Delete</button>";
+                                return "<button class='btn btn-link js-delete' customer-data-id=" + data + ">Delete</button>";
                             }
                         }
                     ]

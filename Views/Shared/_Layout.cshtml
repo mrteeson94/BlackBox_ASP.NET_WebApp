@@ -4,12 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - BlackBox</title>
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-   @Html.Partial("_NavBar")
+    @Html.Partial("_NavBar")
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -17,7 +20,7 @@
             <p>&copy; @DateTime.Now.Year - BlackBox</p>
         </footer>
     </div>
-
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
     @Scripts.Render("~/bundles/lib")
     @RenderSection("scripts", required: false)
 </body>

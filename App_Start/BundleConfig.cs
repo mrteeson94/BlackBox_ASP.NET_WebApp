@@ -26,7 +26,7 @@ namespace blackBox
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
-                      "~/content/dataTables/css/dataTables.bootstrap.css",
+                      "~/Content/dataTables/css/dataTables.bootstrap.css",
                       "~/Content/Site.css"));
         }
     }
