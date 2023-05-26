@@ -8,6 +8,7 @@ using System.Data;
 using blackBox.Models;
 using blackBox.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace blackBox.Controllers.Api
 {
@@ -23,7 +24,12 @@ namespace blackBox.Controllers.Api
         //1.GET List<Movie> GetMovies()
         public IHttpActionResult GetMovies()
         {
-            return Ok(_context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>));
+
+            var movies = _context.Movies
+                .Include(m => m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
+            return Ok(movies);
         }
         //2.GET GetAMovie(int id)
         public IHttpActionResult GetAMovie(int id)
@@ -38,7 +44,7 @@ namespace blackBox.Controllers.Api
         //3. POST CreateMovie()
         [HttpPost]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
-        {
+            {
             if (!ModelState.IsValid)
             {
                 var error = new
