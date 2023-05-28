@@ -18,7 +18,11 @@
         </tr>
     </thead>
 </table>
-
+@* 
+    Note to self for url in href: /Movie/ for domain model reference (Server-side)
+                            WHILE:
+                           /movies/ for api call (Client-side)
+*@
 @section Scripts {
     <script>
         $(document).ready(function () {
@@ -31,7 +35,7 @@
                     {
                         data: "name",
                         render: function (data, type, movie) {
-                            return "<a href='/movies/EditForm/" + movie.id + "'>" + movie.name + "</a>";
+                            return "<a href='/Movie/EditForm/" + movie.id + "'>" + movie.name + "</a>";
                         }
                     },
                     {

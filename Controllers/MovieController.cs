@@ -28,8 +28,13 @@ namespace blackBox.Controllers
         {
             //passing MOVIE API for data access
             //var movie = _context.Movies.Include(c => c.Genre);
+            if (User.IsInRole(RoleName.CanManageMovies))
+            {
+                return View("Index");
 
-            return View();
+            }
+
+            return View("IndexReadOnly"); 
         }
 
 
@@ -44,7 +49,7 @@ namespace blackBox.Controllers
         }
 
         // FORM ActionResults
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult MovieForm()
         {
             var genres = _context.Genres.ToList();
@@ -58,6 +63,7 @@ namespace blackBox.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult SaveMovieForm(Movie movie)
         {
             //checks object values passed from form satisfies dataAnnotation requirements set in model.
@@ -90,6 +96,8 @@ namespace blackBox.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Movie");
         }
+        
+        [Authorize(Roles =RoleName.CanManageMovies)]
         public ActionResult EditForm(int id)
         {
             var selectedMovie = _context.Movies.Single(m => m.Id == id);
