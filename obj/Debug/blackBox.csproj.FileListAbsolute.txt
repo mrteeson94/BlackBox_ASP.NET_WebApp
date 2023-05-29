@@ -412,3 +412,4 @@ C:\Users\AKATY\repos\blackBox\obj\Debug\blackBox.pdb
 C:\Users\AKATY\repos\blackBox\obj\Debug\blackBox.Migrations.updateonwebconfig.resources
 C:\Users\AKATY\repos\blackBox\obj\Debug\blackBox.Migrations.populateMoviesNCustomers.resources
 C:\Users\AKATY\repos\blackBox\obj\Debug\blackBox.Migrations.seedUsers.resources
+C:\Users\AKATY\repos\blackBox\obj\Debug\blackBox.Migrations.AddDrivingLicenseToApplicationUser.resources
