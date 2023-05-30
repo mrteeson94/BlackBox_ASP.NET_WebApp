@@ -26,6 +26,9 @@
                 columns: [
                     {
                         data: "name",
+                        render: function () {
+                                return "<a href='/Movie/Direct/" + movie.id + "'>" + movie.name + "</a>";
+                            }
                     },
                     {
                         data: "genre.genreTitle"
