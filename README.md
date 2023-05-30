@@ -2,7 +2,7 @@
 Introducing an exciting and game-changing movie rental web application, built with the cutting-edge ASP.NET MVC framework. Prepare for a "blockbuster" experience like never before!
 
 # Preview (still under development)
-![Alt Text](https://github.com/mrteeson94/Blackbox/blob/main/blackBpx.gif)
+![Alt Text](https://github.com/mrteeson94/Blackbox/blob/main/blackbox.gif)
 
 ## Table Content
 * [Application Summary](#Application-Summary)
