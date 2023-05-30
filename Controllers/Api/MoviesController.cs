@@ -12,6 +12,8 @@ using System.Data.Entity;
 
 namespace blackBox.Controllers.Api
 {
+    //Business logic in authorize of Movies data is impractical. Better to apply this to customer data 
+    //[Authorize(Roles = RoleName.CanManageMovies)]
     public class MoviesController : ApiController
     {
         private ApplicationDbContext _context { get; set; }

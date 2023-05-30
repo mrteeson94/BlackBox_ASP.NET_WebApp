@@ -99,10 +99,12 @@ namespace blackBox.Controllers
         // Load customer page
         public ActionResult Index()
         {
-            //Not passing domain model anymore as we are relying on API calls
-            //var customers = _context.Customers.Include(c => c.MembershipType);
+            if (User.IsInRole(RoleName.CanManageMovies))
+            {
+                return View("Index");
+            }
+            return View("IndexReadOnly");
 
-            return View();
         }
 
 

@@ -11,6 +11,7 @@ using System.Data.Entity;
 
 namespace blackBox.Controllers.Api
 {
+    [Authorize]
     public class CustomersController : ApiController
     {
         //Instantiate db object

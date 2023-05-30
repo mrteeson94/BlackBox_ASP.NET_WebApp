@@ -53,10 +53,11 @@ namespace blackBox
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
-
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            
+            //Get details from meta developer page (register through - create app)
+            app.UseFacebookAuthentication(
+               appId: "908718960194884",
+               appSecret: "7894537e23b0fc4cf822685896c1b702");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
