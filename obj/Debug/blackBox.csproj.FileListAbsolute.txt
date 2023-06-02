@@ -416,3 +416,9 @@ C:\Users\AKATY\source\repos\Blackbox\obj\Debug\blackBox.Migrations.populateMovie
 C:\Users\AKATY\source\repos\Blackbox\obj\Debug\blackBox.Migrations.seedUsers.resources
 C:\Users\AKATY\source\repos\Blackbox\obj\Debug\blackBox.Migrations.AddDrivingLicenseToApplicationUser.resources
 C:\Users\AKATY\source\repos\BlackBox\obj\Debug\blackBox.Migrations.add_Phone_UserLoginProperty.resources
+C:\Users\AKATY\repos\blackBox\obj\Debug\blackBox.Migrations.add_Phone_UserLoginProperty.resources
+C:\Users\AKATY\repos\blackBox\bin\Glimpse.Ado.dll
+C:\Users\AKATY\repos\blackBox\bin\Glimpse.AspNet.dll
+C:\Users\AKATY\repos\blackBox\bin\Glimpse.Core.dll
+C:\Users\AKATY\repos\blackBox\bin\Glimpse.EF6.dll
+C:\Users\AKATY\repos\blackBox\bin\Glimpse.Mvc5.dll

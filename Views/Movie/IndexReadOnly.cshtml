@@ -26,12 +26,13 @@
                 columns: [
                     {
                         data: "name",
-                        render: function () {
+                        render: function (data, type, movie) {
                                 return "<a href='/Movie/Direct/" + movie.id + "'>" + movie.name + "</a>";
                             }
                     },
                     {
                         data: "genre.genreTitle"
+                        
                     }
                 ]
             });
