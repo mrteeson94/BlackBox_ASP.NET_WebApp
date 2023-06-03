@@ -17,14 +17,17 @@ namespace blackBox.App_Start
             Mapper.CreateMap<Movie, MovieDto>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
             Mapper.CreateMap<Genre, GenreDto>();
+            Mapper.CreateMap<Rental, RentalDto>();
 
             //Maps API inbound calls:
             //Mapper.CreateMap<CustomerDto, Customer>();
             //Mapper.CreateMap<MovieDto, Movie>();
+            //Mapper.CreateMap<RentalDto, Rental>();
 
             //Id identity error, ignore mapping of ids
             Mapper.CreateMap<CustomerDto, Customer>().ForMember(m => m.Id, opt => opt.Ignore());
             Mapper.CreateMap<MovieDto, Movie>().ForMember(m => m.Id, opt => opt.Ignore());
+            Mapper.CreateMap<RentalDto, Rental>().ForMember(m => m.Id, opt => opt.Ignore());
 
 
         }

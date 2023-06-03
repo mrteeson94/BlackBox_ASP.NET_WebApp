@@ -422,3 +422,5 @@ C:\Users\AKATY\repos\blackBox\bin\Glimpse.AspNet.dll
 C:\Users\AKATY\repos\blackBox\bin\Glimpse.Core.dll
 C:\Users\AKATY\repos\blackBox\bin\Glimpse.EF6.dll
 C:\Users\AKATY\repos\blackBox\bin\Glimpse.Mvc5.dll
+C:\Users\AKATY\repos\blackBox\obj\Debug\blackBox.Migrations.AddRentalsTable.resources
+C:\Users\AKATY\repos\blackBox\obj\Debug\blackBox.Migrations.addStockAvailtoColumn_Movies.resources

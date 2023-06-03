@@ -24,14 +24,22 @@ namespace blackBox.Controllers.Api
         }
 
         //1.GET List<Movie> GetMovies()
-        public IHttpActionResult GetMovies()
+        public IHttpActionResult GetMovies(string query = null)
         {
 
-            var movies = _context.Movies
+            var queryMovies = _context.Movies
                 .Include(m => m.Genre)
+                .Where(m => m.StockAvailability > 0);
+
+            if(!string.IsNullOrWhiteSpace(query))
+            {
+                queryMovies = queryMovies.Where(m => m.Name.Contains(query));
+            }
+
+            var moviesDto = queryMovies
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>);
-            return Ok(movies);
+            return Ok(moviesDto);
         }
         //2.GET GetAMovie(int id)
         public IHttpActionResult GetAMovie(int id)

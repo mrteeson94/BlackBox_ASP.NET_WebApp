@@ -11,7 +11,7 @@ using System.Data.Entity;
 
 namespace blackBox.Controllers.Api
 {
-    [Authorize]
+    //[Authorize]
     public class CustomersController : ApiController
     {
         //Instantiate db object
@@ -23,13 +23,22 @@ namespace blackBox.Controllers.Api
         }
 
         //1 GET List<CustomerDto> GetCustomers()  URL: ~/api/customers
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            var customers = _context.Customers
-                .Include(c => c.MembershipType)
+            //var contains querylist of customers from db
+            var queryCustomers = _context.Customers
+                .Include(c => c.MembershipType);
+            //if value exits display only the name of the customer that matches the query
+            if (!String.IsNullOrWhiteSpace(query))
+            {
+                queryCustomers = queryCustomers.Where(c => c.Name.Contains(query));
+            }
+
+            var customerDto = queryCustomers
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>);
-            return Ok(customers);
+
+            return Ok(customerDto);
         }
 
         //2 GET a customer GetACustomer() URL: ~/api/customers/1

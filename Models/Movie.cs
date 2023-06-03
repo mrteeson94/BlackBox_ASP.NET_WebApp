@@ -28,6 +28,9 @@ namespace blackBox.Models
         [Display(Name="Number of Stocks")]
         public int NoOfStock { get; set; }
 
+        [Required]
+        public int StockAvailability { get; set; }
+
         [Required(ErrorMessage ="Pick a genre!")]
         //Foreign key of Genre
         [Display(Name = "Genre")]

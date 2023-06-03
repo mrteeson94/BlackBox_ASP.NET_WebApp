@@ -26,6 +26,10 @@ namespace blackBox.Dtos
         public int NoOfStock { get; set; }
 
         [Required]
+        [Range(0,20, ErrorMessage ="Stock has to be within 0-20")]
+        public int StockAvailability { get; set; }
+
+        [Required]
         //Foreign key of Genre
         public Nullable<int> GenreId { get; set; }
         //Reference property
