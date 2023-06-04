@@ -1,0 +1,51 @@
+﻿@model blackBox.ViewModels.CustomerFormViewModel
+@{
+    ViewBag.Title = "CustomerForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Customer.Id == 0)
+{
+    <h2>New Customer Form</h2>
+}
+else
+{
+    <h2>Edit Customer Form</h2>
+}
+@using (Html.BeginForm("SaveCustomerForm", "Customer"))
+{
+    @Html.ValidationSummary(true, "Please fill in the required fields before submitting!")
+
+    <div class="form-group" style="margin-bottom: 1vw; margin-top: 1vw;">
+        @Html.LabelFor(m => m.Customer.Name)
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
+    </div>
+
+    <div class="form-group" style="margin-bottom: 1vw">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId) <br />
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipType, "MembershipTypeId", "TitleMembershipType"), "Subscription Type", new { @class = "btn-group" })
+        <br />
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
+    </div>
+
+    <div class="form-group" style="margin-bottom: 1vw">
+        @Html.LabelFor(m => m.Customer.BirthDate)
+        @Html.TextBoxFor(m => m.Customer.BirthDate, "{0:dd/MM/yyyy}", new { placeholder = "01/01/2000", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.BirthDate)
+    </div>
+
+    <div class="checkbox" style="margin-bottom: 1vw">
+        @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribe for the latest newsletter!
+    </div>
+    //passes Id and textfield inputs when submit btn is triggered.
+    @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+
+@* Client-side validation on submit *@
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

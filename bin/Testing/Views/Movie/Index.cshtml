@@ -1,0 +1,75 @@
+﻿@model IEnumerable<blackBox.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<input type="button" class="btn btn-primary" value="Add Movie" style="margin-top: 1vw; margin-bottom: 1vw;" onclick="location.href='@Url.Action("MovieForm","Movie")'">
+
+<h2>Movies List</h2>
+
+
+<table id="movies" class="table table-bordered table-hover">
+    <thead>
+        <tr style="background-color:antiquewhite">
+            <th>Movie</th>
+            <th>Genre</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+</table>
+@* 
+    Note to self for url in href: /Movie/ for domain model reference (Server-side)
+                            WHILE:
+                           /movies/ for api call (Client-side)
+*@
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var table = $("#movies").DataTable({
+                ajax: {
+                    url: "/api/movies",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, movie) {
+                            return "<a href='/Movie/EditForm/" + movie.id + "'>" + movie.name + "</a>";
+                        }
+                    },
+                    {
+                        data: "genre.genreTitle"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn btn-link js-delete' customer-data-id='" + data + "'>Delete</button>";
+                        }
+                    }
+                ]
+            });
+
+            //2. On click event to delete row
+            $("#movies").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure?", function (result) {
+                    if (result) {
+                        $.ajax(
+                            {
+                                url: "/api/movies/" + button.attr("customer-data-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    console.log(button.attr("customer-data-id") + "successfully deleted!")
+                                    table.row(button.parents("tr")).remove().draw();
+                                }
+                            }
+                        )
+                    }
+                });
+
+            });
+        });
+    </script>
+}

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<blackBox.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer List</h2>
+    
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr style="background-color:antiquewhite">
+            <th>Customer</th>
+            <th>Discount Rate</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+    @section scripts
+    {
+        <script>
+            $(document).ready(function () {
+
+               var table = $("#customers").DataTable({
+                    ajax: {
+                       url: "/api/customers",
+                        //LIST of objects is being returned, hence empty string is used to store the list instead of hard-coding the object "customers".
+                        dataSrc: "" 
+                    },
+                    columns: [
+                        {
+                            data: "name",
+                            render: function (data, type, customer) {
+                                return "<a href='/customer/Direct/" + customer.id + "'>" + customer.name + "</a>";
+                            }
+                        },
+                        {
+                            data: "membershipType.titleMembershipType"
+                        }
+                    ]
+                });
+            });
+        </script>
+    }

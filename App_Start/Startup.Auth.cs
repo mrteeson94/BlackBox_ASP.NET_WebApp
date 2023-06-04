@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using blackBox.Models;
+using System.Configuration;
 
 namespace blackBox
 {
@@ -53,11 +54,11 @@ namespace blackBox
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
-            
+
             //Get details from meta developer page (register through - create app)
             app.UseFacebookAuthentication(
-               appId: "908718960194884",
-               appSecret: "7894537e23b0fc4cf822685896c1b702");
+               appId: ConfigurationManager.AppSettings["FacebookAppId"],
+               appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

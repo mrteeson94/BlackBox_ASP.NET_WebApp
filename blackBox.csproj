@@ -586,6 +586,10 @@
     <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
     <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="AppSettings.config" />
+    <None Include="Properties\PublishProfiles\Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Release.pubxml" />
+    <None Include="Properties\PublishProfiles\Testing.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -666,6 +670,9 @@
     <Content Include="Views\Movie\IndexReadOnly.cshtml" />
     <Content Include="Views\Customer\IndexReadOnly.cshtml" />
     <Content Include="Views\Rental\Index.cshtml" />
+    <None Include="Web.Testing.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -764,6 +771,16 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Testing|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
