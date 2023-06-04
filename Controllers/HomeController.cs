@@ -18,8 +18,7 @@ namespace blackBox.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            throw new Exception();
             return View();
         }
 
