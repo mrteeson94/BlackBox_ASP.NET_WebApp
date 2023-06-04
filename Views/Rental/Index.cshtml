@@ -12,14 +12,14 @@
         <div class="form-group">
             <label>Customer</label>
             <div class="tt-container">
-                <input id="customer" type="text" value="" class="form-control" />
+                <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control" />
             </div>
         </div>
 
         <div class="form-group">
             <label>Movie</label>
             <div class="tt-container">
-                <input id="movie" type="text" value="" class="form-control" />
+                <input id="movie" name="movie" data-rule-movieSelection="true" required type="text" value="" class="form-control" />
             </div>
         </div>
 
@@ -37,16 +37,15 @@
 </form>
 @section scripts
 {
+    @Scripts.Render("~/bundles/jqueryval") 
     <script>
-/*const toastr = require("../../Scripts/toastr");*/
-
         $(Document).ready(function () {
-
+            //viewmodel of RentalDto 
             var vm = {
                 customerId: 0,
                 movieId: []
             };
-
+            //main typeahead logic for loading customer and movie option in respective text field
             var customers = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -92,23 +91,51 @@
                 vm.movieId.push(movie.id);
             });
 
-            $("#newRental").submit(function (e) {
-                e.preventDefault();
 
-                $.ajax({
-                    url: "/api/newRentals",
-                    method: "post",
-                    data: vm
-                })
-                    .done(function () {
-                        toastr.success("Rental order successfully created!");
-                    })
-                    .fail(function () {
-                        toastr.error("Rental order unable to be created!");
-                    })
+            $.validator.addMethod("validCustomer", function () {
+                console.log("made into validation")
+                return vm.customerId && vm.customerId !== 0;
+            }, "Please select a valid customer.");
 
+            $.validator.addMethod("moveSelection", function () {
+                console.log("check movie selection");
+                return vm.movieId.length > 0;
+            }, "Please select at least one movie.");
+
+            console.log("passed validation code");
+            //validate form via checking customer text input field
+            //Submit function on btn passing viewmodel + toastr notification on function completition.
+            var validator = $("#newRental").validate({
+                submitHandler: function () {
+                    console.log("passed btn before ajax");
+                    $.ajax({
+                        url: "/api/newRentals",
+                        method: "post",
+                        data: vm
+                    })
+                        .done(function () {
+                            console.log("success!")
+                            toastr.success("Rental order successfully created!");
+                            //reset form
+                            $("#customer").typeahead("val", "");
+                            $("#movie").typeahead("val", "");
+                            $("#movies").empty();
+
+                            vm = {
+                                customerId: 0,
+                                movieId: []
+                            };
+
+                            validator.resetForm();
+                        })
+
+                        .fail(function () {
+                            console.log("failed")
+                            toastr.error("Rental order unable to be created!");
+                        });
+                    return false;
+                }
             });
-
 
         });
     </script>
