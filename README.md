@@ -21,6 +21,11 @@ Plans for the project:
 * Constructs RESTful API web services for efficient communication and data exchange.
 * Leverages the power of jQuery, Bootstrap, and bootbox.js to create a user-friendly webpage with a modern touch. The webpage offers a wide range of convenient features, including pagination, sorting, and search filters for tables featured in customer and movie webpages.
 * Integrates social media login-authentication options for added convenience and user accessibility.
+  
+## LATEST TODO LIST 25/06/23:
+* Deploy on Azure web app
+* Create a CI/CD pipeline for the ASP.NET app
+* Utilize Docker for packaging the app environment
 
 ## Technology & Language Used
 * Framework: ASP.NET Web Application MVC 
